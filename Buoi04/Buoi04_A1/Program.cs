@@ -20,7 +20,15 @@ namespace Buoi04_A1
 
         static string PhanLoaiSo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string dau;
+            if (n > 0)
+                dau = "dương";
+            else if (n < 0)
+                dau = "âm";
+            else
+                dau = "bằng 0";
+            string chanLe = n % 2 == 0 ? "chẵn" : "lẻ";
+            return $"{n} là số {dau}, {chanLe}";
         }
     }
 }

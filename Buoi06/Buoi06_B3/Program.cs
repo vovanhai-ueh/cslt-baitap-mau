@@ -20,7 +20,8 @@ namespace Buoi06_B3
 
         static bool LaTangDan(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 0; i < a.Length - 1; i++) if (a[i] > a[i + 1]) return false;
+            return true;
         }
     }
 }

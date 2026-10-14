@@ -20,22 +20,28 @@ namespace Buoi05_A3
 
         static int DemChuSo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            do { dem++; n /= 10; } while (n != 0);
+            return dem;
         }
 
         static int TongChuSo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            while (n > 0) { tong += n % 10; n /= 10; }
+            return tong;
         }
 
         static int DaoSo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dao = 0;
+            while (n > 0) { dao = dao * 10 + n % 10; n /= 10; }
+            return dao;
         }
 
         static bool LaSoDoiXung(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return DaoSo(n) == n;
         }
     }
 }

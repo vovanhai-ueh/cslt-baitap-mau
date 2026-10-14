@@ -20,7 +20,13 @@ namespace Buoi08_B1
 
         static void DemTep(string duongDan, out int soDong, out int soTu, out int soKyTu)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string[] dong = File.ReadAllLines(duongDan);
+            soDong = dong.Length; soTu = 0; soKyTu = 0;
+            foreach (string d in dong)
+            {
+                soKyTu += d.Length;
+                soTu += d.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            }
         }
     }
 }

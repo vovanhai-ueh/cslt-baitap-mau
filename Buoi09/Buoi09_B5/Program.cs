@@ -12,20 +12,10 @@ namespace Buoi09_B5
         public T1 Dau { get; }
         public T2 Sau { get; }
 
-        public Cap(T1 dau, T2 sau)
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public Cap(T1 dau, T2 sau) { Dau = dau; Sau = sau; }
 
-        public Cap<T2, T1> Dao()
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
-
-        public override string ToString()
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public Cap<T2, T1> Dao() => new Cap<T2, T1>(Sau, Dau);
+        public override string ToString() => $"({Dau}, {Sau})";
     }
 
     internal class Program
@@ -41,7 +31,9 @@ namespace Buoi09_B5
 
         static Cap<int, int> TimMinMax(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int min = a[0], max = a[0];
+            foreach (int x in a) { if (x < min) min = x; if (x > max) max = x; }
+            return new Cap<int, int>(min, max);
         }
     }
 }

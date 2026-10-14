@@ -20,7 +20,13 @@ namespace Buoi05_B4
 
         static void InKimTuThapRong(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int dong = 1; dong <= n; dong++)
+            {
+                for (int k = 0; k < n - dong; k++) Console.Write(' ');
+                for (int k = 1; k <= 2 * dong - 1; k++)
+                    Console.Write(k == 1 || k == 2 * dong - 1 || dong == n ? '*' : ' ');
+                Console.WriteLine();
+            }
         }
     }
 }

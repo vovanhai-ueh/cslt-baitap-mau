@@ -12,9 +12,13 @@ namespace Buoi01_A5
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double a = 5, b = 3;
+            double cv = 2 * (a + b);
+            double dt = a * b;
+            Console.WriteLine("Chiều dài  = " + a);
+            Console.WriteLine("Chiều rộng = " + b);
+            Console.WriteLine("Chu vi     = " + cv);
+            Console.WriteLine("Diện tích  = " + dt);
         }
     }
 }

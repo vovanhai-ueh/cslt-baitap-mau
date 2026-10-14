@@ -20,12 +20,18 @@ namespace Buoi06_B1
 
         static bool LaSoNguyenTo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (n < 2) return false;
+            for (int i = 2; i * i <= n; i++)
+                if (n % i == 0) return false;
+            return true;
         }
 
         static int InSoNguyenTo(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            foreach (int x in a) if (LaSoNguyenTo(x)) { Console.Write(x + " "); dem++; }
+            Console.WriteLine();
+            return dem;
         }
     }
 }

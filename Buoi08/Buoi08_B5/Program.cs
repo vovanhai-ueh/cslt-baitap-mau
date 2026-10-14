@@ -20,7 +20,13 @@ namespace Buoi08_B5
 
         static int[] DemChuCai(string duongDan)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int[] dem = new int[26];
+            foreach (char c0 in File.ReadAllText(duongDan))
+            {
+                char c = char.ToLower(c0);
+                if (c >= 'a' && c <= 'z') dem[c - 'a']++;
+            }
+            return dem;
         }
     }
 }

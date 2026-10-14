@@ -14,8 +14,9 @@ namespace Buoi02_B1
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("Nhập nhiệt độ C: ");
+            double c = double.Parse(Console.ReadLine());
+            Console.WriteLine($"{c} C = {c * 9 / 5 + 32:F2} F = {c + 273.15:F2} K");
         }
     }
 }

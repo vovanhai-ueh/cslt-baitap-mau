@@ -20,7 +20,26 @@ namespace Buoi08_B4
 
         static void GopTep(string tep1, string tep2, string tepKetQua)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            using (StreamReader r1 = new StreamReader(tep1))
+            using (StreamReader r2 = new StreamReader(tep2))
+            using (StreamWriter w = new StreamWriter(tepKetQua))
+            {
+                string s1 = DocSo(r1), s2 = DocSo(r2);
+                while (s1 != null && s2 != null)
+                {
+                    if (int.Parse(s1) <= int.Parse(s2)) { w.WriteLine(s1); s1 = DocSo(r1); }
+                    else { w.WriteLine(s2); s2 = DocSo(r2); }
+                }
+                while (s1 != null) { w.WriteLine(s1); s1 = DocSo(r1); }
+                while (s2 != null) { w.WriteLine(s2); s2 = DocSo(r2); }
+            }
+        }
+
+        static string DocSo(StreamReader r)
+        {
+            string s;
+            while ((s = r.ReadLine()) != null && s.Trim() == "") { }
+            return s?.Trim();
         }
     }
 }

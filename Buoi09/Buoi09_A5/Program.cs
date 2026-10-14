@@ -20,12 +20,16 @@ namespace Buoi09_A5
 
         static T TimLonNhat<T>(T[] a) where T : IComparable<T>
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            T max = a[0];
+            foreach (T x in a) if (x.CompareTo(max) > 0) max = x;
+            return max;
         }
 
         static int DemThoa<T>(T[] a, Predicate<T> dieuKien)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            foreach (T x in a) if (dieuKien(x)) dem++;
+            return dem;
         }
     }
 }

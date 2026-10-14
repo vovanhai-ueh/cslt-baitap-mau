@@ -20,12 +20,24 @@ namespace Buoi04_A3
 
         static string GiaiPTBac1(double a, double b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (a != 0)
+                return $"x = {-b / a}";
+            if (b == 0)
+                return "Vô số nghiệm";
+            return "Vô nghiệm";
         }
 
         static string GiaiPTBac2(double a, double b, double c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (a == 0)
+                return GiaiPTBac1(b, c);
+            double delta = b * b - 4 * a * c;
+            if (delta < 0)
+                return "Vô nghiệm";
+            else if (delta == 0)
+                return $"Nghiệm kép x = {-b / (2 * a)}";
+            double can = Math.Sqrt(delta);
+            return $"x1 = {(-b + can) / (2 * a)}, x2 = {(-b - can) / (2 * a)}";
         }
     }
 }

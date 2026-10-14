@@ -20,7 +20,12 @@ namespace Buoi09_B4
 
         static unsafe void DaoMang(int* p, int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int* dau = p, cuoi = p + n - 1;
+            while (dau < cuoi)
+            {
+                int t = *dau; *dau = *cuoi; *cuoi = t;
+                dau++; cuoi--;
+            }
         }
     }
 }

@@ -12,9 +12,9 @@ namespace Buoi01_B2
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.WriteLine("**************************");
+            Console.WriteLine("*   CHÚC MỪNG NĂM MỚI    *");
+            Console.WriteLine("**************************");
         }
     }
 }

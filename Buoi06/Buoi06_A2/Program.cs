@@ -20,17 +20,24 @@ namespace Buoi06_A2
 
         static int DemSoChan(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            foreach (int x in a) if (x % 2 == 0) dem++;
+            return dem;
         }
 
         static int TimViTriCuoi(int[] a, int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = a.Length - 1; i >= 0; i--) if (a[i] == x) return i;
+            return -1;
         }
 
         static int InMoiViTri(int[] a, int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            for (int i = 0; i < a.Length; i++)
+                if (a[i] == x) { Console.Write(i + " "); dem++; }
+            Console.WriteLine();
+            return dem;
         }
     }
 }

@@ -20,7 +20,11 @@ namespace Buoi05_B7
 
         static string PhanTichThuaSo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string kq = "";
+            for (int p = 2; p * p <= n; p++)
+                while (n % p == 0) { kq += (kq == "" ? "" : " x ") + p; n /= p; }
+            if (n > 1) kq += (kq == "" ? "" : " x ") + n;
+            return kq;
         }
     }
 }

@@ -14,18 +14,18 @@ namespace Buoi03_A3
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Gọi thử các hàm của em ở đây, ví dụ:
-            // Console.WriteLine(TenHam(...));
+            decimal tong = TinhThanhTien(5, 15000m) + TinhThanhTien(10, 4500m) + TinhThanhTien(2, 8000m);
+            Console.WriteLine($"THANH TOÁN {tong + TinhThue(tong):N0}");
         }
 
         static decimal TinhThanhTien(int soLuong, decimal donGia)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return soLuong * donGia;
         }
 
         static decimal TinhThue(decimal tien)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return tien * 0.08m;
         }
     }
 }

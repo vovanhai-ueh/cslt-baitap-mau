@@ -20,12 +20,16 @@ namespace Buoi05_B2
 
         static int DemUoc(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            for (int i = 1; i <= n; i++) if (n % i == 0) dem++;
+            return dem;
         }
 
         static int TongUoc(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 1; i <= n; i++) if (n % i == 0) tong += i;
+            return tong;
         }
     }
 }

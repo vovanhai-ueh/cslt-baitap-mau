@@ -14,8 +14,10 @@ namespace Buoi02_B5
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("a = "); int a = int.Parse(Console.ReadLine());
+            Console.Write("b = "); int b = int.Parse(Console.ReadLine());
+            int tam = a; a = b; b = tam;
+            Console.WriteLine($"Sau hoán đổi: a = {a}, b = {b}");
         }
     }
 }

@@ -20,7 +20,9 @@ namespace Buoi05_B5
 
         static long Fibonacci(int k)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            long a = 1, b = 1;
+            for (int i = 3; i <= k; i++) { long c = a + b; a = b; b = c; }
+            return b;
         }
     }
 }

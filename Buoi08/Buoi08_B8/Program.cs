@@ -20,7 +20,21 @@ namespace Buoi08_B8
 
         static void BaoCaoBanHang(string duongDan, out string[] sanPham, out long[] doanhThu)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string[] dong = File.ReadAllLines(duongDan);
+            string[] sp = new string[dong.Length];
+            long[] dt = new long[dong.Length];
+            int k = 0;
+            for (int i = 1; i < dong.Length; i++)
+            {
+                string[] t = dong[i].Split(',');
+                if (t.Length < 4) continue;
+                int vt = -1;
+                for (int j = 0; j < k; j++) if (sp[j] == t[1]) { vt = j; break; }
+                if (vt == -1) { vt = k; sp[k] = t[1]; k++; }
+                dt[vt] += long.Parse(t[2]) * long.Parse(t[3]);
+            }
+            sanPham = new string[k]; doanhThu = new long[k];
+            Array.Copy(sp, sanPham, k); Array.Copy(dt, doanhThu, k);
         }
     }
 }

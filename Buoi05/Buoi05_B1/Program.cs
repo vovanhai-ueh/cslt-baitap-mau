@@ -20,7 +20,9 @@ namespace Buoi05_B1
 
         static double TongNghichDao(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double s = 0;
+            for (int i = 1; i <= n; i++) s += 1.0 / i;
+            return s;
         }
     }
 }

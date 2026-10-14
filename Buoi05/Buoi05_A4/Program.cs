@@ -20,17 +20,34 @@ namespace Buoi05_A4
 
         static void InBangCuuChuong()
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int bang = 2; bang <= 5; bang++)
+                    Console.Write($"{bang} x {i,2} = {bang * i,2}    ");
+                Console.WriteLine();
+            }
         }
 
         static void InTamGiacVuong(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int dong = 1; dong <= n; dong++)
+            {
+                for (int k = 1; k <= dong; k++) Console.Write('*');
+                Console.WriteLine();
+            }
         }
 
         static void InHinhChuNhatRong(int rong, int cao)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int dong = 1; dong <= cao; dong++)
+            {
+                for (int cot = 1; cot <= rong; cot++)
+                {
+                    bool laVien = dong == 1 || dong == cao || cot == 1 || cot == rong;
+                    Console.Write(laVien ? '*' : ' ');
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

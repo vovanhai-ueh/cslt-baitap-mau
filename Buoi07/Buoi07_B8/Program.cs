@@ -20,7 +20,26 @@ namespace Buoi07_B8
 
         static string[] DoMin(string[] banDo)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int soDong = banDo.Length;
+            string[] kq = new string[soDong];
+            for (int i = 0; i < soDong; i++)
+            {
+                string dong = "";
+                for (int j = 0; j < banDo[i].Length; j++)
+                {
+                    if (banDo[i][j] == '*') { dong += '*'; continue; }
+                    int dem = 0;
+                    for (int di = -1; di <= 1; di++)
+                        for (int dj = -1; dj <= 1; dj++)
+                        {
+                            int u = i + di, w = j + dj;
+                            if (u >= 0 && u < soDong && w >= 0 && w < banDo[u].Length && banDo[u][w] == '*') dem++;
+                        }
+                    dong += dem.ToString();
+                }
+                kq[i] = dong;
+            }
+            return kq;
         }
     }
 }

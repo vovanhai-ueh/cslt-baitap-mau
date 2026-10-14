@@ -27,7 +27,12 @@ namespace Buoi09_A1
 
         static void SapXepGiamTheoDiem(SinhVien[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 0; i < ds.Length - 1; i++)
+            {
+                int vt = i;
+                for (int j = i + 1; j < ds.Length; j++) if (ds[j].DiemTB > ds[vt].DiemTB) vt = j;
+                SinhVien tam = ds[i]; ds[i] = ds[vt]; ds[vt] = tam;
+            }
         }
     }
 }

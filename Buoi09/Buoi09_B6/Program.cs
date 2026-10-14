@@ -27,22 +27,22 @@ namespace Buoi09_B6
 
         static SinhVien[] LocGioi(SinhVien[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return Array.FindAll(ds, sv => sv.DiemTB >= 8);
         }
 
         static SinhVien TimDauTienDuoi5(SinhVien[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return Array.Find(ds, sv => sv.DiemTB < 5);
         }
 
         static bool CoAiDat10(SinhVien[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return Array.Exists(ds, sv => sv.DiemTB == 10);
         }
 
         static void SapXepTheoTen(SinhVien[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Array.Sort(ds, (p, q) => string.Compare(p.HoTen, q.HoTen, StringComparison.Ordinal));
         }
     }
 }

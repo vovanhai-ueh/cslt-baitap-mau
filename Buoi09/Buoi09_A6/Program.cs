@@ -15,18 +15,17 @@ namespace Buoi09_A6
 
         public SinhVien(string mssv, string hoTen, double diemTB)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            MSSV = mssv;
+            HoTen = hoTen;
+            DiemTB = diemTB;
         }
 
-        public XepLoai Loai
-        {
-            get { throw new NotImplementedException(); } // XÓA khi làm bài
-        }
+        public XepLoai Loai => DiemTB >= 8 ? XepLoai.Gioi
+            : DiemTB >= 6.5 ? XepLoai.Kha
+            : DiemTB >= 5 ? XepLoai.TrungBinh : XepLoai.Yeu;
 
-        public string ToCsv()
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public string ToCsv() => $"{MSSV},{HoTen},{DiemTB.ToString(CultureInfo.InvariantCulture)}";
+        public override string ToString() => $"{MSSV} {HoTen,-14} {DiemTB,5} {Loai}";
     }
 
     enum XepLoai { Yeu, TrungBinh, Kha, Gioi }
@@ -44,12 +43,21 @@ namespace Buoi09_A6
 
         static List<SinhVien> DocTep(string tep)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            List<SinhVien> ds = new List<SinhVien>();
+            if (!File.Exists(tep)) return ds;
+            foreach (string dong in File.ReadAllLines(tep))
+            {
+                string[] t = dong.Split(',');
+                if (t.Length == 3 && double.TryParse(t[2], NumberStyles.Float, CultureInfo.InvariantCulture, out double d))
+                    ds.Add(new SinhVien(t[0], t[1], d));
+            }
+            return ds;
         }
 
         static void GhiTep(string tep, List<SinhVien> ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            using (StreamWriter sw = new StreamWriter(tep))
+                foreach (SinhVien sv in ds) sw.WriteLine(sv.ToCsv());
         }
     }
 }

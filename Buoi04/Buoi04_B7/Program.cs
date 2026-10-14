@@ -20,7 +20,10 @@ namespace Buoi04_B7
 
         static string GiaiHePT(double a1, double b1, double c1, double a2, double b2, double c2)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double d = a1 * b2 - a2 * b1, dx = c1 * b2 - c2 * b1, dy = a1 * c2 - a2 * c1;
+            if (d != 0) return $"x = {dx / d}, y = {dy / d}";
+            if (dx == 0 && dy == 0) return "Vô số nghiệm";
+            return "Vô nghiệm";
         }
     }
 }

@@ -20,7 +20,11 @@ namespace Buoi07_B4
 
         static int[,] XoayPhai90(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int m = a.GetLength(0), n = a.GetLength(1);
+            int[,] b = new int[n, m];
+            for (int i = 0; i < m; i++)
+                for (int j = 0; j < n; j++) b[j, m - 1 - i] = a[i, j];
+            return b;
         }
     }
 }

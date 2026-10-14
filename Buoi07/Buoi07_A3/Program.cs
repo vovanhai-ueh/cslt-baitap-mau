@@ -20,27 +20,39 @@ namespace Buoi07_A3
 
         static int TongCheoChinh(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 0; i < a.GetLength(0); i++) tong += a[i, i];
+            return tong;
         }
 
         static int TongCheoPhu(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int n = a.GetLength(0), tong = 0;
+            for (int i = 0; i < n; i++) tong += a[i, n - 1 - i];
+            return tong;
         }
 
         static int TongTamGiacTren(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 0; i < a.GetLength(0); i++)
+                for (int j = i + 1; j < a.GetLength(1); j++) tong += a[i, j];
+            return tong;
         }
 
         static int TongTamGiacDuoi(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 0; i < a.GetLength(0); i++)
+                for (int j = 0; j < i; j++) tong += a[i, j];
+            return tong;
         }
 
         static bool LaTamGiacTren(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 1; i < a.GetLength(0); i++)
+                for (int j = 0; j < i; j++) if (a[i, j] != 0) return false;
+            return true;
         }
     }
 }

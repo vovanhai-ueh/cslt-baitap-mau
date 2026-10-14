@@ -14,18 +14,20 @@ namespace Buoi03_A1
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Gọi thử các hàm của em ở đây, ví dụ:
-            // Console.WriteLine(TenHam(...));
+            InTieuDe("TÍNH DIỆN TÍCH");
+            Console.WriteLine($"r = 5: {TinhDienTichHinhTron(5):F2}");
         }
 
         static void InTieuDe(string tieuDe)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.WriteLine(new string('=', 30));
+            Console.WriteLine(tieuDe);
+            Console.WriteLine(new string('=', 30));
         }
 
         static double TinhDienTichHinhTron(double banKinh)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return Math.PI * banKinh * banKinh;
         }
     }
 }

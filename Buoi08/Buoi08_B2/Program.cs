@@ -20,7 +20,9 @@ namespace Buoi08_B2
 
         static void SaoChepDanhSo(string nguon, string dich)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string[] dong = File.ReadAllLines(nguon);
+            using (StreamWriter sw = new StreamWriter(dich))
+                for (int i = 0; i < dong.Length; i++) sw.WriteLine($"{i + 1,3}: {dong[i]}");
         }
     }
 }

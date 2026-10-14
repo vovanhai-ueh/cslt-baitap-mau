@@ -20,7 +20,13 @@ namespace Buoi06_B7
 
         static void TimDoanTangDaiNhat(int[] a, out int batDau, out int doDai)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int bd = 0, dai = 1;
+            batDau = 0; doDai = 1;
+            for (int i = 1; i < a.Length; i++)
+            {
+                if (a[i] > a[i - 1]) dai++; else { bd = i; dai = 1; }
+                if (dai > doDai) { doDai = dai; batDau = bd; }
+            }
         }
     }
 }

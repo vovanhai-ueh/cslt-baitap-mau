@@ -20,12 +20,25 @@ namespace Buoi08_B7
 
         static string MaHoaCaesar(string s, int k)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            k = ((k % 26) + 26) % 26;
+            char[] kq = s.ToCharArray();
+            for (int i = 0; i < kq.Length; i++)
+            {
+                char c = kq[i];
+                if (c >= 'a' && c <= 'z') kq[i] = (char)('a' + (c - 'a' + k) % 26);
+                else if (c >= 'A' && c <= 'Z') kq[i] = (char)('A' + (c - 'A' + k) % 26);
+            }
+            return new string(kq);
         }
 
         static void MaHoaTep(string nguon, string dich, int k)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            using (StreamReader sr = new StreamReader(nguon))
+            using (StreamWriter sw = new StreamWriter(dich))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null) sw.WriteLine(MaHoaCaesar(line, k));
+            }
         }
     }
 }

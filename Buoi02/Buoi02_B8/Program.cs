@@ -14,8 +14,14 @@ namespace Buoi02_B8
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("Ngày: "); int ngay = int.Parse(Console.ReadLine());
+            Console.Write("Tháng: "); int thang = int.Parse(Console.ReadLine());
+            Console.Write("Năm: "); int nam = int.Parse(Console.ReadLine());
+            int a = (14 - thang) / 12;
+            int y = nam - a;
+            int m = thang + 12 * a - 2;
+            int thu = (ngay + y + y / 4 - y / 100 + y / 400 + 31 * m / 12) % 7;
+            Console.WriteLine($"Thứ (0 = Chủ nhật): {thu}");
         }
     }
 }

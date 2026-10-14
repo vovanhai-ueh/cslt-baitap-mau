@@ -8,12 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Buoi09_B3
 {
-    // Khai báo struct BonByte với [StructLayout(LayoutKind.Explicit)]:
-    // int GiaTri ở offset 0 và bốn trường byte B0, B1, B2, B3 ở offset 0, 1, 2, 3.
+    [StructLayout(LayoutKind.Explicit)]
     struct BonByte
     {
-        public int GiaTri;
-        public byte B0, B1, B2, B3;
+        [FieldOffset(0)] public int GiaTri;
+        [FieldOffset(0)] public byte B0;
+        [FieldOffset(1)] public byte B1;
+        [FieldOffset(2)] public byte B2;
+        [FieldOffset(3)] public byte B3;
     }
 
     internal class Program

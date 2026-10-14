@@ -20,12 +20,32 @@ namespace Buoi05_A6
 
         static int NhapSoNguyenTrongKhoang(string loiNhac, int min, int max)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int x;
+            bool hopLe;
+            do
+            {
+                Console.Write(loiNhac);
+                hopLe = int.TryParse(Console.ReadLine(), out x) && x >= min && x <= max;
+                if (!hopLe)
+                    Console.WriteLine($"  Không hợp lệ, hãy nhập số nguyên từ {min} đến {max}.");
+            } while (!hopLe);
+            return x;
         }
 
         static bool ChoiMotVan(int soBiMat, int soLuotToiDa)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int luot = 1; luot <= soLuotToiDa; luot++)
+            {
+                int doan = NhapSoNguyenTrongKhoang($"Lượt {luot}/{soLuotToiDa} - đoán: ", 1, 100);
+                if (doan == soBiMat)
+                {
+                    Console.WriteLine($"Chính xác! Bạn đoán đúng sau {luot} lượt.");
+                    return true;
+                }
+                Console.WriteLine(doan < soBiMat ? "  Lớn hơn!" : "  Nhỏ hơn!");
+            }
+            Console.WriteLine($"Hết lượt! Số bí mật là {soBiMat}.");
+            return false;
         }
     }
 }

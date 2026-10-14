@@ -20,12 +20,17 @@ namespace Buoi06_A3
 
         static void DaoMang(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 0, j = a.Length - 1; i < j; i++, j--)
+            {
+                int tam = a[i]; a[i] = a[j]; a[j] = tam;
+            }
         }
 
         static bool LaMangDoiXung(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 0; i < a.Length / 2; i++)
+                if (a[i] != a[a.Length - 1 - i]) return false;
+            return true;
         }
     }
 }

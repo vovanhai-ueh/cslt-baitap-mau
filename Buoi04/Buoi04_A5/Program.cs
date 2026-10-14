@@ -20,7 +20,20 @@ namespace Buoi04_A5
 
         static string TinhToan(double a, char phepToan, double b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            switch (phepToan)
+            {
+                case '+': return $"{a} + {b} = {a + b}";
+                case '-': return $"{a} - {b} = {a - b}";
+                case '*': return $"{a} * {b} = {a * b}";
+                case '/':
+                    if (b == 0) return "Lỗi: không chia được cho 0";
+                    return $"{a} / {b} = {a / b}";
+                case '%':
+                    if (b == 0) return "Lỗi: không chia được cho 0";
+                    return $"{a} % {b} = {a % b}";
+                case '^': return $"{a} ^ {b} = {Math.Pow(a, b)}";
+                default: return $"Phép toán '{phepToan}' không được hỗ trợ";
+            }
         }
     }
 }

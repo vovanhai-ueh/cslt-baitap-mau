@@ -20,12 +20,14 @@ namespace Buoi04_A6
 
         static bool NhapSoNguyen(string loiNhac, out int ketQua)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write(loiNhac);
+            string s = Console.ReadLine();
+            return int.TryParse(s, out ketQua);
         }
 
         static int TinhTuoi(int namSinh, int namHienTai)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return namHienTai - namSinh;
         }
     }
 }

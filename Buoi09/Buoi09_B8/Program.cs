@@ -12,21 +12,25 @@ namespace Buoi09_B8
         private T[] a;
         private int dau, soPhanTu;
 
-        public HangDoiVong(int sucChua)
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public HangDoiVong(int sucChua) { a = new T[sucChua]; }
 
         public int SoPhanTu => soPhanTu;
 
         public bool Them(T x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (soPhanTu == a.Length) return false;
+            a[(dau + soPhanTu) % a.Length] = x;
+            soPhanTu++;
+            return true;
         }
 
         public T Lay()
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (soPhanTu == 0) throw new InvalidOperationException("Hàng đợi rỗng");
+            T x = a[dau];
+            dau = (dau + 1) % a.Length;
+            soPhanTu--;
+            return x;
         }
     }
 

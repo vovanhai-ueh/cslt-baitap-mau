@@ -20,12 +20,16 @@ namespace Buoi07_A6
 
         static double TrungBinhDong(double[,] d, int i)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double tong = 0;
+            for (int j = 0; j < d.GetLength(1); j++) tong += d[i, j];
+            return tong / d.GetLength(1);
         }
 
         static double TrungBinhCot(double[,] d, int j)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double tong = 0;
+            for (int i = 0; i < d.GetLength(0); i++) tong += d[i, j];
+            return tong / d.GetLength(0);
         }
     }
 }

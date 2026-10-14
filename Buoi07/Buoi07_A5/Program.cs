@@ -20,7 +20,14 @@ namespace Buoi07_A5
 
         static int[][] TaoPascal(int soDong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int[][] p = new int[soDong][];
+            for (int i = 0; i < soDong; i++)
+            {
+                p[i] = new int[i + 1];
+                p[i][0] = p[i][i] = 1;
+                for (int j = 1; j < i; j++) p[i][j] = p[i - 1][j - 1] + p[i - 1][j];
+            }
+            return p;
         }
     }
 }

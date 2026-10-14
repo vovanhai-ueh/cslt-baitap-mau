@@ -14,28 +14,28 @@ namespace Buoi03_A6
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Gọi thử các hàm của em ở đây, ví dụ:
-            // Console.WriteLine(TenHam(...));
+            Console.WriteLine(DienTich(3, 4, 5));
         }
 
         static double DienTich(double canh)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return canh * canh;
         }
 
         static double DienTich(double dai, double rong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return dai * rong;
         }
 
         static double DienTich(double a, double b, double c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double p = (a + b + c) / 2;
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
         static double TinhTienLai(double tienGui, double laiSuat = 0.06, int soNam = 1)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return tienGui * Math.Pow(1 + laiSuat, soNam) - tienGui;
         }
     }
 }

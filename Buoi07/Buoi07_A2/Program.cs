@@ -20,17 +20,25 @@ namespace Buoi07_A2
 
         static void TimLonNhat(int[,] a, out int dong, out int cot)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            dong = 0; cot = 0;
+            for (int i = 0; i < a.GetLength(0); i++)
+                for (int j = 0; j < a.GetLength(1); j++)
+                    if (a[i, j] > a[dong, cot]) { dong = i; cot = j; }
         }
 
         static void TimNhoNhat(int[,] a, out int dong, out int cot)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            dong = 0; cot = 0;
+            for (int i = 0; i < a.GetLength(0); i++)
+                for (int j = 0; j < a.GetLength(1); j++)
+                    if (a[i, j] < a[dong, cot]) { dong = i; cot = j; }
         }
 
         static int DemGiaTri(int[,] a, int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            foreach (int v in a) if (v == x) dem++;
+            return dem;
         }
     }
 }

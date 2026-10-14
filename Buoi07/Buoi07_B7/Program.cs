@@ -20,7 +20,18 @@ namespace Buoi07_B7
 
         static int[,] TaoXoanOc(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int[,] a = new int[n, n];
+            int tren = 0, duoi = n - 1, trai = 0, phai = n - 1, k = 1;
+            while (tren <= duoi && trai <= phai)
+            {
+                for (int j = trai; j <= phai; j++) a[tren, j] = k++;
+                tren++;
+                for (int i = tren; i <= duoi; i++) a[i, phai] = k++;
+                phai--;
+                if (tren <= duoi) { for (int j = phai; j >= trai; j--) a[duoi, j] = k++; duoi--; }
+                if (trai <= phai) { for (int i = duoi; i >= tren; i--) a[i, trai] = k++; trai++; }
+            }
+            return a;
         }
     }
 }

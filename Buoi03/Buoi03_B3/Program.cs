@@ -20,12 +20,12 @@ namespace Buoi03_B3
 
         static double KhoangCach(double x1, double y1, double x2, double y2)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         }
 
         static double ChuViTamGiac(double xA, double yA, double xB, double yB, double xC, double yC)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return KhoangCach(xA, yA, xB, yB) + KhoangCach(xB, yB, xC, yC) + KhoangCach(xC, yC, xA, yA);
         }
     }
 }

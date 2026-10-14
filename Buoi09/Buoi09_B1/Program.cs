@@ -12,15 +12,9 @@ namespace Buoi09_B1
         public double X;
         public double Y;
 
-        public Diem2D(double x, double y)
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public Diem2D(double x, double y) { X = x; Y = y; }
 
-        public double KhoangCach(Diem2D d)
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public double KhoangCach(Diem2D d) => Math.Sqrt((X - d.X) * (X - d.X) + (Y - d.Y) * (Y - d.Y));
     }
 
     internal class Program
@@ -36,7 +30,9 @@ namespace Buoi09_B1
 
         static double ChuViDaGiac(Diem2D[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double cv = 0;
+            for (int i = 0; i < ds.Length; i++) cv += ds[i].KhoangCach(ds[(i + 1) % ds.Length]);
+            return cv;
         }
     }
 }

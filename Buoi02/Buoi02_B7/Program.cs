@@ -14,8 +14,9 @@ namespace Buoi02_B7
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("Nhập số tiền: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Làm tròn: {(n + 500) / 1000 * 1000}");
         }
     }
 }

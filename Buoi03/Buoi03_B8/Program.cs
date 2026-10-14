@@ -20,17 +20,17 @@ namespace Buoi03_B8
 
         static double TinhLuongThang(double luongCoBan, double heSo, int ngayCong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return luongCoBan * heSo * ngayCong / 26;
         }
 
         static double TinhBaoHiem(double luongThang)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return luongThang * 0.105;
         }
 
         static double TinhThucLinh(double luongThang)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return luongThang - TinhBaoHiem(luongThang);
         }
     }
 }

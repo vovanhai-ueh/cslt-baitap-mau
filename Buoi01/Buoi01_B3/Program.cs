@@ -12,9 +12,9 @@ namespace Buoi01_B3
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.WriteLine("Chương trình có lỗi");
+            Console.WriteLine(@"Đường dẫn: C:\Temp\new");
+            Console.WriteLine("Kết thúc");
         }
     }
 }

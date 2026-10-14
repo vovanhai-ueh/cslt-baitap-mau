@@ -20,12 +20,15 @@ namespace Buoi04_B2
 
         static double TinhBMI(double canNang, double chieuCao)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return canNang / (chieuCao * chieuCao);
         }
 
         static string PhanLoaiBMI(double bmi)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (bmi < 18.5) return "Gầy";
+            if (bmi < 25) return "Bình thường";
+            if (bmi < 30) return "Thừa cân";
+            return "Béo phì";
         }
     }
 }

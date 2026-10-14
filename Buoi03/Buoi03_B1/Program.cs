@@ -20,12 +20,12 @@ namespace Buoi03_B1
 
         static double DoiCsangF(double c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return c * 9 / 5 + 32;
         }
 
         static double DoiFsangC(double f)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return (f - 32) * 5 / 9;
         }
     }
 }

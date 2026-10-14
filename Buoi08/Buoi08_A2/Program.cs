@@ -20,7 +20,24 @@ namespace Buoi08_A2
 
         static void ThongKeTep(string duongDan)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int soHopLe = 0, soLoi = 0;
+            double tong = 0, max = double.MinValue, min = double.MaxValue;
+            using (StreamReader sr = new StreamReader(duongDan))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (line.Trim() == "") continue;
+                    if (!double.TryParse(line, out double x)) { soLoi++; continue; }
+                    soHopLe++;
+                    tong += x;
+                    if (x > max) max = x;
+                    if (x < min) min = x;
+                }
+            }
+            if (soHopLe == 0) { Console.WriteLine("Tệp không có số hợp lệ."); return; }
+            Console.WriteLine($"Số hợp lệ: {soHopLe}, dòng lỗi: {soLoi}");
+            Console.WriteLine($"Tổng = {tong}, TB = {tong / soHopLe:F2}, max = {max}, min = {min}");
         }
     }
 }

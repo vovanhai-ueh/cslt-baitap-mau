@@ -20,7 +20,9 @@ namespace Buoi03_B6
 
         static void GiaiPTBac2(double a, double b, double c, out double x1, out double x2)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double canDelta = Math.Sqrt(b * b - 4 * a * c);
+            x1 = (-b + canDelta) / (2 * a);
+            x2 = (-b - canDelta) / (2 * a);
         }
     }
 }

@@ -20,12 +20,12 @@ namespace Buoi03_B2
 
         static bool LaNamNhuan(int nam)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return (nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0;
         }
 
         static bool LaTamGiac(double a, double b, double c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
         }
     }
 }

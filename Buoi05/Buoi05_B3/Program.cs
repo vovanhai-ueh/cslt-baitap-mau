@@ -20,12 +20,14 @@ namespace Buoi05_B3
 
         static int TongUoc(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 1; i <= n; i++) if (n % i == 0) tong += i;
+            return tong;
         }
 
         static bool LaSoHoanHao(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return n > 1 && TongUoc(n) - n == n;
         }
     }
 }

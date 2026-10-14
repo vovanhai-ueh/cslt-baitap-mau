@@ -20,7 +20,18 @@ namespace Buoi08_A5
 
         static bool DocMangAnToan(string duongDan, out int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            a = null;
+            try
+            {
+                string[] dong = File.ReadAllLines(duongDan);
+                a = new int[dong.Length];
+                for (int i = 0; i < dong.Length; i++) a[i] = int.Parse(dong[i]);
+                return true;
+            }
+            catch (FileNotFoundException) { Console.WriteLine($"Không tìm thấy tệp {duongDan}."); }
+            catch (FormatException) { Console.WriteLine($"Tệp {duongDan} có dòng không phải số nguyên."); }
+            a = null;
+            return false;
         }
     }
 }

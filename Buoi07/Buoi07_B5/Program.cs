@@ -20,17 +20,28 @@ namespace Buoi07_B5
 
         static bool LaNhoNhatDong(int[,] a, int i, int j)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int k = 0; k < a.GetLength(1); k++) if (a[i, k] < a[i, j]) return false;
+            return true;
         }
 
         static bool LaLonNhatCot(int[,] a, int i, int j)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int k = 0; k < a.GetLength(0); k++) if (a[k, j] > a[i, j]) return false;
+            return true;
         }
 
         static int InDiemYenNgua(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            for (int i = 0; i < a.GetLength(0); i++)
+                for (int j = 0; j < a.GetLength(1); j++)
+                    if (LaNhoNhatDong(a, i, j) && LaLonNhatCot(a, i, j))
+                    {
+                        Console.WriteLine($"{a[i, j]} tại ({i}, {j})");
+                        dem++;
+                    }
+            if (dem == 0) Console.WriteLine("Không có");
+            return dem;
         }
     }
 }

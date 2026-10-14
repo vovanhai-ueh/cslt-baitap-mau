@@ -22,17 +22,17 @@ namespace Buoi09_B2
 
         static void SapXepTheoGia(SanPham[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Array.Sort(ds, (p, q) => p.Gia.CompareTo(q.Gia));
         }
 
         static void SapXepTheoTen(SanPham[] ds)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Array.Sort(ds, (p, q) => string.Compare(p.Ten, q.Ten, StringComparison.Ordinal));
         }
 
         static SanPham GiamGia(SanPham sp, decimal phanTram)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return sp with { Gia = sp.Gia * (100 - phanTram) / 100 };
         }
     }
 }

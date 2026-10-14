@@ -20,17 +20,31 @@ namespace Buoi04_B6
 
         static bool LaNamNhuan(int nam)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return (nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0;
         }
 
         static int SoNgayTrongThang(int thang, int nam)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            switch (thang)
+            {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    return 31;
+                case 4: case 6: case 9: case 11:
+                    return 30;
+                case 2:
+                    return LaNamNhuan(nam) ? 29 : 28;
+                default:
+                    return -1;
+            }
         }
 
         static void NgayHomSau(ref int ngay, ref int thang, ref int nam)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (ngay < SoNgayTrongThang(thang, nam)) { ngay++; return; }
+            ngay = 1;
+            if (thang < 12) { thang++; return; }
+            thang = 1;
+            nam++;
         }
     }
 }

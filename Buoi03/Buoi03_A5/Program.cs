@@ -14,13 +14,15 @@ namespace Buoi03_A5
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Gọi thử các hàm của em ở đây, ví dụ:
-            // Console.WriteLine(TenHam(...));
+            TachChuSo(482, out int tram, out int chuc, out int donVi);
+            Console.WriteLine($"{tram} {chuc} {donVi}");
         }
 
         static void TachChuSo(int n, out int tram, out int chuc, out int donVi)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            tram = n / 100;
+            chuc = n / 10 % 10;
+            donVi = n % 10;
         }
     }
 }

@@ -14,8 +14,11 @@ namespace Buoi02_B2
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("Cân nặng (kg): ");
+            double kg = double.Parse(Console.ReadLine());
+            Console.Write("Chiều cao (m): ");
+            double m = double.Parse(Console.ReadLine());
+            Console.WriteLine($"BMI = {kg / (m * m):F2}");
         }
     }
 }

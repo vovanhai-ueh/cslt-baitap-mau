@@ -20,12 +20,30 @@ namespace Buoi05_A2
 
         static int NhapSoNguyenTrongKhoang(string loiNhac, int min, int max)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int x;
+            bool hopLe;
+            do
+            {
+                Console.Write(loiNhac);
+                hopLe = int.TryParse(Console.ReadLine(), out x) && x >= min && x <= max;
+                if (!hopLe)
+                    Console.WriteLine($"  Không hợp lệ, hãy nhập số nguyên từ {min} đến {max}.");
+            } while (!hopLe);
+            return x;
         }
 
         static double NhapSoThucTrongKhoang(string loiNhac, double min, double max)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double x;
+            bool hopLe;
+            do
+            {
+                Console.Write(loiNhac);
+                hopLe = double.TryParse(Console.ReadLine(), out x) && x >= min && x <= max;
+                if (!hopLe)
+                    Console.WriteLine($"  Không hợp lệ, hãy nhập số từ {min} đến {max}.");
+            } while (!hopLe);
+            return x;
         }
     }
 }

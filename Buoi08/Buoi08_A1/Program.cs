@@ -14,8 +14,19 @@ namespace Buoi08_A1
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string[] ten = new string[50];
+            int n = 0;
+            while (n < ten.Length)
+            {
+                Console.Write($"Tên thứ {n + 1} (Enter để dừng): ");
+                string s = Console.ReadLine();
+                if (s == null || s.Trim() == "") break;
+                ten[n++] = s.Trim();
+            }
+            File.WriteAllLines("ds.txt", ten[..n]);
+            string[] doc = File.ReadAllLines("ds.txt");
+            for (int i = 0; i < doc.Length; i++)
+                Console.WriteLine($"{i + 1}. {doc[i]}");
         }
     }
 }

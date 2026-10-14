@@ -20,7 +20,10 @@ namespace Buoi03_B5
 
         static void XoayVong(ref int a, ref int b, ref int c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tam = a;
+            a = b;
+            b = c;
+            c = tam;
         }
     }
 }

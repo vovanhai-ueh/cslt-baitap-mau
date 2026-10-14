@@ -20,22 +20,32 @@ namespace Buoi05_A5
 
         static int UCLN(int a, int b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+            while (b != 0) { int r = a % b; a = b; b = r; }
+            return a;
         }
 
         static int BCNN(int a, int b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return a / UCLN(a, b) * b;
         }
 
         static bool LaSoNguyenTo(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (n < 2) return false;
+            for (int i = 2; i * i <= n; i++)
+                if (n % i == 0) return false;
+            return true;
         }
 
         static int LietKeNguyenTo(int a, int b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            for (int n = a; n <= b; n++)
+                if (LaSoNguyenTo(n)) { Console.Write(n + " "); dem++; }
+            Console.WriteLine();
+            return dem;
         }
     }
 }

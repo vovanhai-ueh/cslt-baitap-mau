@@ -20,12 +20,30 @@ namespace Buoi08_A6
 
         static void GhiBangDiem(string duongDan, string[] mssv, double[,] diem)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            using (StreamWriter sw = new StreamWriter(duongDan))
+            {
+                sw.WriteLine("MSSV,Toan,Ly,Tin");
+                for (int i = 0; i < mssv.Length; i++)
+                {
+                    sw.Write(mssv[i]);
+                    for (int j = 0; j < diem.GetLength(1); j++) sw.Write("," + diem[i, j].ToString(CultureInfo.InvariantCulture));
+                    sw.WriteLine();
+                }
+            }
         }
 
         static void DocBangDiem(string duongDan, out string[] mssv, out double[,] diem)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            string[] dong = File.ReadAllLines(duongDan);
+            int soSV = dong.Length - 1;
+            mssv = new string[soSV];
+            diem = new double[soSV, 3];
+            for (int i = 0; i < soSV; i++)
+            {
+                string[] t = dong[i + 1].Split(',');
+                mssv[i] = t[0];
+                for (int j = 0; j < 3; j++) diem[i, j] = double.Parse(t[j + 1], CultureInfo.InvariantCulture);
+            }
         }
     }
 }

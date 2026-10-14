@@ -14,8 +14,17 @@ namespace Buoi02_A1
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.WriteLine($"byte   : {byte.MinValue} .. {byte.MaxValue} ({sizeof(byte)} byte)");
+            Console.WriteLine($"short  : {short.MinValue} .. {short.MaxValue} ({sizeof(short)} byte)");
+            Console.WriteLine($"int    : {int.MinValue} .. {int.MaxValue} ({sizeof(int)} byte)");
+            Console.WriteLine($"long   : {long.MinValue} .. {long.MaxValue} ({sizeof(long)} byte)");
+            Console.WriteLine($"double : {double.MinValue} .. {double.MaxValue} ({sizeof(double)} byte)");
+            Console.WriteLine($"decimal: {decimal.MinValue} .. {decimal.MaxValue} ({sizeof(decimal)} byte)");
+            int m = int.MaxValue;
+            m = m + 1;
+            Console.WriteLine($"int.MaxValue + 1 = {m}");
+            long danSo = 8_100_000_000;
+            Console.WriteLine($"Dân số thế giới (long): {danSo:N0}");
         }
     }
 }

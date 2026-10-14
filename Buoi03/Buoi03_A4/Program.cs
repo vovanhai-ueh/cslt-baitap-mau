@@ -14,23 +14,26 @@ namespace Buoi03_A4
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Gọi thử các hàm của em ở đây, ví dụ:
-            // Console.WriteLine(TenHam(...));
+            int x = 3, y = 8;
+            HoanDoi(ref x, ref y);
+            Console.WriteLine($"x = {x}, y = {y}");
         }
 
         static void Tang(int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            x = x + 1;
         }
 
         static void TangRef(ref int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            x = x + 1;
         }
 
         static void HoanDoi(ref int a, ref int b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tam = a;
+            a = b;
+            b = tam;
         }
     }
 }

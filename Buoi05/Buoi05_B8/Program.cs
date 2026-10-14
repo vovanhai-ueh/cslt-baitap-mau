@@ -20,7 +20,8 @@ namespace Buoi05_B8
 
         static bool LaSoArmstrong(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int a = n / 100, b = n / 10 % 10, c = n % 10;
+            return a * a * a + b * b * b + c * c * c == n;
         }
     }
 }

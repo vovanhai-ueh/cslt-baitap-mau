@@ -20,17 +20,23 @@ namespace Buoi06_A1
 
         static int Tong(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            foreach (int x in a) tong += x;
+            return tong;
         }
 
         static int ViTriLonNhat(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int vt = 0;
+            for (int i = 1; i < a.Length; i++) if (a[i] > a[vt]) vt = i;
+            return vt;
         }
 
         static int ViTriNhoNhat(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int vt = 0;
+            for (int i = 1; i < a.Length; i++) if (a[i] < a[vt]) vt = i;
+            return vt;
         }
     }
 }

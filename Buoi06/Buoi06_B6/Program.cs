@@ -20,7 +20,17 @@ namespace Buoi06_B6
 
         static int SapXepNoiBot(int[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int soDoi = 0, luot = 0;
+            bool coDoi;
+            do
+            {
+                coDoi = false;
+                luot++;
+                for (int i = 0; i < a.Length - 1; i++)
+                    if (a[i] > a[i + 1]) { int t = a[i]; a[i] = a[i + 1]; a[i + 1] = t; soDoi++; coDoi = true; }
+                Console.WriteLine($"Lượt {luot}: {string.Join(" ", a)}");
+            } while (coDoi);
+            return soDoi;
         }
     }
 }

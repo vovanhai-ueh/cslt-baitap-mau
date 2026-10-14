@@ -20,7 +20,12 @@ namespace Buoi06_B5
 
         static int[] TronMang(int[] a, int[] b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int[] c = new int[a.Length + b.Length];
+            int i = 0, j = 0, k = 0;
+            while (i < a.Length && j < b.Length) c[k++] = a[i] <= b[j] ? a[i++] : b[j++];
+            while (i < a.Length) c[k++] = a[i++];
+            while (j < b.Length) c[k++] = b[j++];
+            return c;
         }
     }
 }

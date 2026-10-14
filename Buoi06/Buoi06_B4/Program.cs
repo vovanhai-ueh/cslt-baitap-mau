@@ -20,7 +20,9 @@ namespace Buoi06_B4
 
         static void XoaMoiX(int[] a, ref int n, int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int k = 0;
+            for (int i = 0; i < n; i++) if (a[i] != x) a[k++] = a[i];
+            n = k;
         }
     }
 }

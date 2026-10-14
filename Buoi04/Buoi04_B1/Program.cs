@@ -20,12 +20,18 @@ namespace Buoi04_B1
 
         static int TimMax3(int a, int b, int c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int max = a;
+            if (b > max) max = b;
+            if (c > max) max = c;
+            return max;
         }
 
         static int TimMin3(int a, int b, int c)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int min = a;
+            if (b < min) min = b;
+            if (c < min) min = c;
+            return min;
         }
     }
 }

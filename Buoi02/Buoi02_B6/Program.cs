@@ -14,8 +14,12 @@ namespace Buoi02_B6
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("Số tiền gửi P: "); double p = double.Parse(Console.ReadLine());
+            Console.Write("Lãi suất r (%/năm): "); double r = double.Parse(Console.ReadLine());
+            Console.Write("Số năm n: "); int n = int.Parse(Console.ReadLine());
+            double nhan = p * Math.Pow(1 + r / 100, n);
+            Console.WriteLine($"Số tiền nhận được: {nhan:N2}");
+            Console.WriteLine($"Tiền lãi: {nhan - p:N2}");
         }
     }
 }

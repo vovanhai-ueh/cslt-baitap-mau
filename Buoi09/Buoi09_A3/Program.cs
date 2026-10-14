@@ -13,28 +13,23 @@ namespace Buoi09_A3
 
         public PhanSo(int tu, int mau)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (mau == 0) throw new ArgumentException("Mẫu số phải khác 0");
+            if (mau < 0) { tu = -tu; mau = -mau; }
+            int u = UCLN(Math.Abs(tu), mau);
+            this.tu = tu / u;
+            this.mau = mau / u;
         }
 
-        public PhanSo Cong(PhanSo p)
+        private static int UCLN(int a, int b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            while (b != 0) { int r = a % b; a = b; b = r; }
+            return a == 0 ? 1 : a;
         }
 
-        public PhanSo Nhan(PhanSo p)
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
-
-        public double GiaTri
-        {
-            get { throw new NotImplementedException(); } // XÓA khi làm bài
-        }
-
-        public override string ToString()
-        {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
-        }
+        public PhanSo Cong(PhanSo p) => new PhanSo(tu * p.mau + p.tu * mau, mau * p.mau);
+        public PhanSo Nhan(PhanSo p) => new PhanSo(tu * p.tu, mau * p.mau);
+        public double GiaTri => (double)tu / mau;
+        public override string ToString() => mau == 1 ? $"{tu}" : $"{tu}/{mau}";
     }
 
     internal class Program

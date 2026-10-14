@@ -20,12 +20,12 @@ namespace Buoi03_B4
 
         static int TongChuSo3(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return n / 100 + n / 10 % 10 + n % 10;
         }
 
         static int SoDao3(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return n % 10 * 100 + n / 10 % 10 * 10 + n / 100;
         }
     }
 }

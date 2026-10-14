@@ -14,8 +14,21 @@ namespace Buoi09_A4
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            List<int> L = new List<int> { 5, 3, 8 };
+            L.Add(1);
+            L.RemoveAt(0);
+            L.Insert(0, 9);
+            Console.WriteLine(string.Join(" ", L) + " " + L.Count + " " + L.Sum());
+            Dictionary<string, double> diem = new Dictionary<string, double>();
+            diem["SV01"] = 6.8;
+            diem["SV02"] = 9.1;
+            diem["SV01"] = 7.0;
+            Console.WriteLine(diem.Count + " " + diem["SV01"] + " " + diem.ContainsKey("SV09"));
+            if (diem.TryGetValue("SV02", out double d))
+                Console.WriteLine(d);
+            foreach (KeyValuePair<string, double> kv in diem)
+                Console.Write($"{kv.Key}={kv.Value} ");
+            Console.WriteLine();
         }
     }
 }

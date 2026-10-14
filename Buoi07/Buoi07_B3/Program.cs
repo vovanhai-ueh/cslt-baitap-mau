@@ -20,22 +20,30 @@ namespace Buoi07_B3
 
         static int TongDong(int[,] a, int i)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int j = 0; j < a.GetLength(1); j++) tong += a[i, j];
+            return tong;
         }
 
         static int TongCot(int[,] a, int j)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 0; i < a.GetLength(0); i++) tong += a[i, j];
+            return tong;
         }
 
         static int DongTongLonNhat(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int vt = 0;
+            for (int i = 1; i < a.GetLength(0); i++) if (TongDong(a, i) > TongDong(a, vt)) vt = i;
+            return vt;
         }
 
         static int CotTongLonNhat(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int vt = 0;
+            for (int j = 1; j < a.GetLength(1); j++) if (TongCot(a, j) > TongCot(a, vt)) vt = j;
+            return vt;
         }
     }
 }

@@ -20,12 +20,15 @@ namespace Buoi03_B7
 
         static int SoNgayJulian(int ngay, int thang, int nam)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int a = (14 - thang) / 12;
+            int y = nam + 4800 - a;
+            int m = thang + 12 * a - 3;
+            return ngay + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045;
         }
 
         static int SoNgayGiua(int ngay1, int thang1, int nam1, int ngay2, int thang2, int nam2)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return SoNgayJulian(ngay2, thang2, nam2) - SoNgayJulian(ngay1, thang1, nam1);
         }
     }
 }

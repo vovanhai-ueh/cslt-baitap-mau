@@ -20,7 +20,9 @@ namespace Buoi04_B5
 
         static long TinhCuocTaxi(int km)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (km <= 1) return 12000;
+            if (km <= 30) return 12000 + (km - 1) * 10000L;
+            return 12000 + 29 * 10000L + (km - 30) * 8000L;
         }
     }
 }

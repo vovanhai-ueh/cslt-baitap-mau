@@ -14,8 +14,13 @@ namespace Buoi02_A3
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Viết chương trình theo đề bài ở đây.
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write("Nhập tổng số giây: ");
+            int tongGiay = int.Parse(Console.ReadLine());
+            int gio = tongGiay / 3600;
+            int phut = tongGiay % 3600 / 60;
+            int giay = tongGiay % 60;
+            Console.WriteLine($"{tongGiay} giây = {gio} giờ {phut} phút {giay} giây");
+            Console.WriteLine($"Dạng đồng hồ: {gio:D2}:{phut:D2}:{giay:D2}");
         }
     }
 }

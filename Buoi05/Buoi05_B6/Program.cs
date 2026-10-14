@@ -20,7 +20,10 @@ namespace Buoi05_B6
 
         static double CanBacHai(double a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (a == 0) return 0;
+            double x = a, cu;
+            do { cu = x; x = (x + a / x) / 2; } while (Math.Abs(x - cu) > 1e-12);
+            return x;
         }
     }
 }

@@ -20,12 +20,20 @@ namespace Buoi07_B6
 
         static void SapXepTungDong(int[][] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            foreach (int[] dong in a)
+                for (int i = 0; i < dong.Length - 1; i++)
+                {
+                    int vt = i;
+                    for (int j = i + 1; j < dong.Length; j++) if (dong[j] < dong[vt]) vt = j;
+                    int t = dong[i]; dong[i] = dong[vt]; dong[vt] = t;
+                }
         }
 
         static void SapXepTheoDoDai(int[][] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 0; i < a.Length - 1; i++)
+                for (int j = i + 1; j < a.Length; j++)
+                    if (a[j].Length < a[i].Length) { int[] t = a[i]; a[i] = a[j]; a[j] = t; }
         }
     }
 }

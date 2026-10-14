@@ -20,12 +20,17 @@ namespace Buoi05_A1
 
         static int TongDen(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int tong = 0;
+            for (int i = 1; i <= n; i++) tong += i;
+            return tong;
         }
 
         static int DemSoChan(int a, int b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int dem = 0;
+            for (int i = a; i <= b; i++)
+                if (i % 2 == 0) dem++;
+            return dem;
         }
     }
 }

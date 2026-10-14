@@ -20,7 +20,12 @@ namespace Buoi07_B1
 
         static void DemAmDuongDong(int[,] a, int i, out int soAm, out int soDuong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            soAm = 0; soDuong = 0;
+            for (int j = 0; j < a.GetLength(1); j++)
+            {
+                if (a[i, j] < 0) soAm++;
+                else if (a[i, j] > 0) soDuong++;
+            }
         }
     }
 }

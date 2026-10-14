@@ -20,17 +20,28 @@ namespace Buoi06_A6
 
         static double TrungBinh(double[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double t = 0;
+            foreach (double x in a) t += x;
+            return t / a.Length;
         }
 
         static double GiaTriLonNhat(double[] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            double m = a[0];
+            foreach (double x in a) if (x > m) m = x;
+            return m;
         }
 
         static void DemTheoLoai(double[] a, out int gioi, out int kha, out int tb, out int yeu)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            gioi = kha = tb = yeu = 0;
+            foreach (double d in a)
+            {
+                if (d >= 8) gioi++;
+                else if (d >= 6.5) kha++;
+                else if (d >= 5) tb++;
+                else yeu++;
+            }
         }
     }
 }

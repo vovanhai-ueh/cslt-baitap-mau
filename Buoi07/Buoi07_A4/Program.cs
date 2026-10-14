@@ -20,17 +20,32 @@ namespace Buoi07_A4
 
         static int[,] ChuyenVi(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int m = a.GetLength(0), n = a.GetLength(1);
+            int[,] b = new int[n, m];
+            for (int i = 0; i < m; i++)
+                for (int j = 0; j < n; j++) b[j, i] = a[i, j];
+            return b;
         }
 
         static int[,] CongMaTran(int[,] a, int[,] b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int m = a.GetLength(0), n = a.GetLength(1);
+            if (b.GetLength(0) != m || b.GetLength(1) != n) return null;
+            int[,] c = new int[m, n];
+            for (int i = 0; i < m; i++)
+                for (int j = 0; j < n; j++) c[i, j] = a[i, j] + b[i, j];
+            return c;
         }
 
         static int[,] NhanMaTran(int[,] a, int[,] b)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int m = a.GetLength(0), n = a.GetLength(1), p = b.GetLength(1);
+            if (b.GetLength(0) != n) return null;
+            int[,] c = new int[m, p];
+            for (int i = 0; i < m; i++)
+                for (int j = 0; j < p; j++)
+                    for (int k = 0; k < n; k++) c[i, j] += a[i, k] * b[k, j];
+            return c;
         }
     }
 }

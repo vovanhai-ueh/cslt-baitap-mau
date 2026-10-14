@@ -14,33 +14,36 @@ namespace Buoi03_A2
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // Gọi thử các hàm của em ở đây, ví dụ:
-            // Console.WriteLine(TenHam(...));
+            double dai = NhapSoThuc("Nhập chiều dài: ");
+            double rong = NhapSoThuc("Nhập chiều rộng: ");
+            Console.WriteLine($"Chu vi: {TinhChuVi(dai, rong):F2}");
         }
 
         static double NhapSoThuc(string loiNhac)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write(loiNhac);
+            return double.Parse(Console.ReadLine());
         }
 
         static int NhapSoNguyen(string loiNhac)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            Console.Write(loiNhac);
+            return int.Parse(Console.ReadLine());
         }
 
         static double TinhChuVi(double dai, double rong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return 2 * (dai + rong);
         }
 
         static double TinhDienTich(double dai, double rong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return dai * rong;
         }
 
         static double TinhDuongCheo(double dai, double rong)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            return Math.Sqrt(dai * dai + rong * rong);
         }
     }
 }

@@ -20,12 +20,32 @@ namespace Buoi08_A4
 
         static void GhiMaTran(string duongDan, int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int m = a.GetLength(0), n = a.GetLength(1);
+            using (StreamWriter sw = new StreamWriter(duongDan))
+            {
+                sw.WriteLine($"{m} {n}");
+                for (int i = 0; i < m; i++)
+                {
+                    for (int j = 0; j < n; j++) sw.Write(a[i, j] + (j < n - 1 ? " " : ""));
+                    sw.WriteLine();
+                }
+            }
         }
 
         static int[,] DocMaTran(string duongDan)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            using (StreamReader sr = new StreamReader(duongDan))
+            {
+                string[] kt = sr.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                int m = int.Parse(kt[0]), n = int.Parse(kt[1]);
+                int[,] a = new int[m, n];
+                for (int i = 0; i < m; i++)
+                {
+                    string[] t = sr.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    for (int j = 0; j < n; j++) a[i, j] = int.Parse(t[j]);
+                }
+                return a;
+            }
         }
     }
 }

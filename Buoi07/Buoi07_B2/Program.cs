@@ -20,12 +20,18 @@ namespace Buoi07_B2
 
         static int[,] TaoMaTranDonVi(int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int[,] a = new int[n, n];
+            for (int i = 0; i < n; i++) a[i, i] = 1;
+            return a;
         }
 
         static bool LaDoiXung(int[,] a)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            int n = a.GetLength(0);
+            if (a.GetLength(1) != n) return false;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < i; j++) if (a[i, j] != a[j, i]) return false;
+            return true;
         }
     }
 }

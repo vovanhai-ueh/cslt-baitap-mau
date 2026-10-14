@@ -20,17 +20,25 @@ namespace Buoi06_A4
 
         static bool ChenPhanTu(int[] a, ref int n, int viTri, int x)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (n >= a.Length || viTri < 0 || viTri > n) return false;
+            for (int i = n; i > viTri; i--) a[i] = a[i - 1];
+            a[viTri] = x;
+            n++;
+            return true;
         }
 
         static bool XoaPhanTu(int[] a, ref int n, int viTri)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            if (viTri < 0 || viTri >= n) return false;
+            for (int i = viTri; i < n - 1; i++) a[i] = a[i + 1];
+            n--;
+            return true;
         }
 
         static void InMang(int[] a, int n)
         {
-            throw new NotImplementedException(); // XÓA dòng này khi làm bài
+            for (int i = 0; i < n; i++) Console.Write(a[i] + " ");
+            Console.WriteLine();
         }
     }
 }
